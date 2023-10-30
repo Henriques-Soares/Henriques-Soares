@@ -1,4 +1,4 @@
-<h2>Hello, my name is Henriques Soares</h2>
+  <h2>Hello, my name is Henriques Soares</h2>
 
 <p>🛰Currently, I am a student of Computer Engineering at <a href="https://www.fiap.com.br/">FIAP💫</a>.🛰</p>
 <p>⚡️This repository was created to track and document my progress in the field of programming.⚡️</p>
@@ -40,3 +40,5 @@
   <a href="https://github.com/Henriques-Soares">
   <img loading="lazy" witdh="180em" src="https://github-readme-stats.vercel.app/api?username=Henriques-Soares&show_icons=true&theme=dark&include_all_commits=true&count_ptivate=true"/>
   <img loading="lazy" witdh="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Henriques-Soares&show_icons=true&include_all_commits=true&layout=compact&langs_count=7&theme=dark"/>
+
+![snake gif](https://github.com/Henriques-Soares/Henriques-Soares/blob/output/github-contribution-grid-snake.svg)
