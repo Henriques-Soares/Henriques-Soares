@@ -1,8 +1,8 @@
 name: Generate Datas
 
 on:
-  schedule: # execute every 12 hours
-    - cron: "* */12 * * *"
+  schedule: # execute a cada 12 horas
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,6 @@ jobs:
     steps:
       # Snake Animation
       - uses: Platane/snk@master
-        id: snake-gif
         with:
           github_user_name: Henriques-Soares
           svg_out_path: dist/github-contribution-grid-snake.svg
@@ -23,4 +22,3 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
