@@ -40,5 +40,3 @@
   <a href="https://github.com/Henriques-Soares">
   <img loading="lazy" witdh="180em" src="https://github-readme-stats.vercel.app/api?username=Henriques-Soares&show_icons=true&theme=dark&include_all_commits=true&count_ptivate=true"/>
   <img loading="lazy" witdh="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Henriques-Soares&show_icons=true&include_all_commits=true&layout=compact&langs_count=7&theme=dark"/>
-
-![Snake animation](https://github.com/Henriques-Soares/Henriques-Soares/blob/output/github-contribution-grid-snake.svg)
