@@ -1,0 +1,55 @@
+name: Build profile
+
+on:
+  schedule:
+    - cron: "17 9 * * *" # every day, 06:17 in São Paulo
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/**"
+      - "assets/portrait.txt"
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Profile card (live stats)
+        run: python scripts/neofetch.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+
+      - name: Banner and diagram
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-inter fonts-dejavu-core fonts-dejavu-mono
+          pip install --quiet fonttools
+          python scripts/build_header.py
+          python scripts/build_vila.py
+
+      - name: Commit if something changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/*.svg assets/stats.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: refresh profile assets"
+            git push
+          fi
